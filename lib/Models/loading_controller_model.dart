@@ -1,0 +1,3 @@
+class LoadingControllerModel{
+  LoadingControllerModel();
+}
