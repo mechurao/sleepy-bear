@@ -40,6 +40,7 @@ dependencies:
   video_player: ^2.8.6
   flutter_svg: ^2.0.10+1
   perfect_freehand: ^2.3.2
+  hexcolor: ^3.0.1
 
 dev_dependencies:
   flutter_test:
@@ -69,7 +70,7 @@ flutter:
   #   - images/a_dot_ham.jpeg
 
   assets:
-    - assets/background/background1.gif
+    - assets/bear/bear_welcome.png
     - assets/background/background1.mp4
 
   # An image asset can refer to one or more resolution-specific "variants", see

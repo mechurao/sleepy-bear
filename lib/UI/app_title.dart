@@ -16,7 +16,8 @@ class AppTitle extends StatelessWidget{
 
     return Text(
         Strings.sleepyBear,
-      style: GoogleFonts.titanOne(fontSize: _size),
+      style: GoogleFonts.titanOne(fontSize: _size, ),
+      textAlign: TextAlign.center,
     );
   }
 }
