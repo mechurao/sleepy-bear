@@ -37,10 +37,11 @@ dependencies:
   cupertino_icons: ^1.0.6
   one_context: ^4.0.0
   google_fonts: ^6.2.1
-  video_player: ^2.8.6
   flutter_svg: ^2.0.10+1
   perfect_freehand: ^2.3.2
   hexcolor: ^3.0.1
+  lottie: ^3.1.2
+  photo_view: ^0.15.0
 
 dev_dependencies:
   flutter_test:
@@ -71,7 +72,15 @@ flutter:
 
   assets:
     - assets/bear/bear_welcome.png
-    - assets/background/background1.mp4
+    - assets/background/background.json
+    - assets/icons/check.png
+    - assets/icons/navBar/listen_icon.png
+    - assets/icons/navBar/settings_icon.png
+    - assets/icons/navBar/stories_icon.png
+    - assets/icons/social/apple.png
+    - assets/icons/social/facebook.png
+    - assets/icons/social/google.png
+    - assets/icons/social/mail.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

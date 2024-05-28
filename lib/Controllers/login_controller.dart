@@ -1,8 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sleepy_bear/UI/background.dart';
+import 'package:sleepy_bear/UI/wave_underline.dart';
+import 'package:sleepy_bear/Values/dimensions.dart';
 
 import '../UI/header.dart';
+import '../Values/AppColors.dart';
 import '../Values/Assets.dart';
+import '../Values/strings.dart';
 
 class LoginController extends StatefulWidget {
   @override
@@ -10,42 +16,96 @@ class LoginController extends StatefulWidget {
 }
 
 class _LoginControllerState extends State<LoginController> {
-  bool _isVisible = false;
+  bool _bearVisible = false;
 
   @override
   void initState() {
     super.initState();
     // Delayed start of animation
-    Future.delayed(Duration(milliseconds: 100), () {
+    Future.delayed(const Duration(milliseconds: 100), () {
       setState(() {
-        _isVisible = true;
+        _bearVisible = true;
       });
     });
   }
 
   @override
   Widget build(BuildContext context) {
+
+    Widget _checkRow(String text){
+      return Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Assets.checkIcon,
+          Padding(
+            padding: const EdgeInsets.only(left: 10),
+            child: Text(
+                text
+            ),
+          )
+        ],
+      );
+    }
+
+    Widget _infoContainer(){
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(Strings.signUpNow),
+          _checkRow(Strings.signUpNote1),
+          _checkRow(Strings.signUpNote2),
+          _checkRow(Strings.signUpNte3)
+        ],
+      );
+    }
+
     return Scaffold(
       body: Background(
-        child: Stack(
-          children: [
-            const Column(
-              children: [
-                Align(
-                  alignment: Alignment.center,
-                  child: Header(),
-                ),
-              ],
-            ),
-            AnimatedPositioned(
-              duration: const Duration(milliseconds: 900),
-              right: _isVisible ? 0 : -MediaQuery.of(context).size.width,
-              top: MediaQuery.of(context).size.height * 0.05,
-              curve: Curves.easeInOut,
-              child: Assets.bearWelcome,
-            ),
-          ],
-        ),
+        child: SafeArea(
+          child: Stack(
+            children: [
+              Column(
+                children: [
+                  const Align(
+                    alignment: Alignment.center,
+                    child: Header(),
+                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        Strings.signUpNow,
+                        style: GoogleFonts.nunito(
+                          textStyle: TextStyle(
+                            fontSize: Dimensions.titleFontSize,
+                            fontWeight: FontWeight.w900,
+                            color: AppColors.defaultTextColor,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  _infoContainer(),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(Strings.alreadyHaveAccount),
+                      WaveUnderline(text: Strings.logIn)
+                    ],
+                  )
+                ],
+              ),
+              AnimatedPositioned(
+                duration: const Duration(milliseconds: 900),
+                right: _bearVisible ? 0 : -MediaQuery.of(context).size.width,
+                top: MediaQuery.of(context).size.height * 0.05,
+                curve: Curves.easeInOut,
+                child: Assets.bearWelcome,
+              ),
+            ],
+          ),
+        )
       ),
     );
   }

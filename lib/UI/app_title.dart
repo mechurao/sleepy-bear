@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sleepy_bear/Values/styles.dart';
 
 import '../Values/strings.dart';
 
@@ -16,7 +17,7 @@ class AppTitle extends StatelessWidget{
 
     return Text(
         Strings.sleepyBear,
-      style: GoogleFonts.titanOne(fontSize: _size, ),
+      style: Styles.header,
       textAlign: TextAlign.center,
     );
   }

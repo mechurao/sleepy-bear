@@ -5,16 +5,16 @@ import 'package:flutter/material.dart';
 
 class WaveUnderline extends StatelessWidget {
   final String text;
-  final double minStrokeHeight;
-  final double maxStrokeHeight;
+  final double minStrokeHeight = 1.1;
+  final double maxStrokeHeight = 2.4;
 
-  WaveUnderline({required this.text, required this.minStrokeHeight, required this.maxStrokeHeight});
+  WaveUnderline({required this.text});
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = TextStyle(
-      fontSize: 24,
-      fontWeight: FontWeight.bold,
+    const textStyle = TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.w900,
       color: Colors.orange,
     );
 
@@ -63,7 +63,7 @@ class IrregularWavyUnderlinePainter extends CustomPainter {
       ..style = PaintingStyle.stroke;
 
     double startX = 0;
-    double startY = size.height -1; // Position the underline closer to the text
+    double startY = size.height +1; // Position the underline closer to the text
 
     while (startX < width) {
       final remainingWidth = width - startX;
