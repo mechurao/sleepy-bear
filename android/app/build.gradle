@@ -27,7 +27,7 @@ if (flutterVersionName == null) {
 }
 
 android {
-    namespace = "com.mechurao.sleepy_bear.sleepy_bear"
+    namespace = "com.mechurao.sleepy_bear"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 

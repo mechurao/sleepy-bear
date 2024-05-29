@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sleepy_bear/UI/Buttons/Auth%20buttons/apple_button.dart';
 import 'package:sleepy_bear/UI/background.dart';
 import 'package:sleepy_bear/UI/wave_underline.dart';
 import 'package:sleepy_bear/Values/dimensions.dart';
@@ -87,6 +88,7 @@ class _LoginControllerState extends State<LoginController> {
                     ],
                   ),
                   _infoContainer(),
+                  AppleButton(action: (){}),
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [

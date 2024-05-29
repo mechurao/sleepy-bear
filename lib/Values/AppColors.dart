@@ -9,4 +9,9 @@ abstract class AppColors{
   static Color mainButtonColor = HexColor("#536182");
   
   static Color popUpColor = HexColor("#F8EEE2");
+  
+  // auth buttons colors
+static Color appleColor = HexColor("#010101");
+static Color googleColor = Colors.white;
+static Color fbColor = HexColor("#1877F2");
 }
