@@ -54,8 +54,8 @@ class _AppTextformFieldState extends State<AppTextformField> {
         decoration: InputDecoration(
           hintText: widget.label,
           filled: true,
-          fillColor: AppColors.inputColor.withOpacity(0.25),
           border: InputBorder.none,
+          fillColor: AppColors.inputColor.withOpacity(0.25),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(_radius),
             borderSide: BorderSide.none,

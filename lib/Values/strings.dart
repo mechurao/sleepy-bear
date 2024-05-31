@@ -18,6 +18,8 @@ static const String logIn = "Log in";
 
 static const String or = "or";
 
+static const String update = "UPDATE";
+
 // navigation bar
 static const String sleep = "Sleep";
 static const String stories = "Stories";

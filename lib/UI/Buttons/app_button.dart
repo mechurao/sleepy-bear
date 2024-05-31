@@ -9,7 +9,7 @@ abstract class AppButton extends StatelessWidget {
   final Widget? leftIcon;
   final Widget? rightIcon;
   final String? fontFamily;
-  final double? height; // Přidán nový parametr
+  final double? height;
 
   const AppButton({
     super.key,
@@ -29,6 +29,7 @@ abstract class AppButton extends StatelessWidget {
       fontSize: Dimensions.contentFontSize,
       color: titleColor ?? Colors.white,
       fontFamily: fontFamily,
+      fontWeight: FontWeight.w700
     );
 
     return FractionallySizedBox(

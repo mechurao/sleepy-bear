@@ -15,6 +15,7 @@ abstract class Assets{
 
 
   static Widget checkIcon = Image.asset("${_iconsPath}check.png");
+  static Widget checkboxIcon = Image.asset("${_iconsPath}checkbox.png");
 
   // bottom navigation bar
   static ImageIcon listenIcon = const ImageIcon(AssetImage("${_navBarIconsPath}sleep_icon.png"));
