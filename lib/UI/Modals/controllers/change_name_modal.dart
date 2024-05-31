@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:sleepy_bear/UI/Buttons/input_button.dart';
 import 'package:sleepy_bear/UI/Textfields/app_textformfield.dart';
 import '../../../Values/AppColors.dart';
@@ -15,79 +14,79 @@ class ChangeNameModal extends StatefulWidget {
 }
 
 class _ChangeNameModalState extends State<ChangeNameModal> {
+  String _childName = '';
+  String _parentName = '';
 
-String _childName = '';
-String _parentName = '';
+  void _childNameChanged(String? val) {
+    if (val == null) {
+      return;
+    }
+    setState(() {
+      _childName = val;
+    });
+  }
 
-void _childNameChanged(String? val){
-  if(val == null){return;}
-  _childName = val;
-}
-
-void _parentNameChanged(String? val){
-  if(val == null){return;}
-  _parentName = val;
-}
-
+  void _parentNameChanged(String? val) {
+    if (val == null) {
+      return;
+    }
+    setState(() {
+      _parentName = val;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      clipBehavior: Clip.none,
+    return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
-        Positioned(
-          top: -174,
-          child: Assets.bearWave,
+        Text(
+          Strings.changeNames,
+          style: Styles.title(color: AppColors.formButtonColor),
         ),
-        SingleChildScrollView(
-          padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-          child: SizedBox(
-            width: ScreenDimensions.getScreenWidth() * 0.9,
-            height: 340,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  Strings.changeNames,
-                  style: Styles.title(color: AppColors.formButtonColor),
+        Text(
+          Strings.changeNamesMessage,
+          style: Styles.content(color: AppColors.formButtonColor),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 10, bottom: 9),
+          child: AppTextField(
+            label: Strings.childsName,
+            onChanged: _childNameChanged,
+          ),
+        ),
+        AppTextField(
+          label: Strings.parentsName,
+          onChanged: _parentNameChanged,
+        ),
+        const SizedBox(height: 20),
+        RichText(
+          text: TextSpan(
+            children: [
+              WidgetSpan(
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 10),
+                  child: Assets.privacyBlueIcon,
                 ),
-                Text(
-                  Strings.changeNamesMessage,
-                  style: Styles.content(color: AppColors.formButtonColor),
+              ),
+              TextSpan(
+                text: Strings.shareDisclaimer,
+                style: Styles.note(
+                  color: AppColors.formButtonColor,
+                  italic: true,
+                  size: 14,
                 ),
-                 Padding(
-                    padding: const EdgeInsets.only(top: 10, bottom: 9),
-                  child: AppTextformField(label: Strings.childsName, onSaved: (val) => _childNameChanged,),
-                ),
-                 AppTextformField(label: Strings.parentsName, onSaved: (val) => _parentNameChanged,),
-                const Spacer(flex: 1,),
-                RichText(
-                  text: TextSpan(
-                    children: [
-                      WidgetSpan(
-                        child: Padding(
-                          padding: const EdgeInsets.only(right: 10),
-                          child: Assets.privacyBlueIcon,
-                        ),
-                      ),
-                      TextSpan(
-                        text: Strings.shareDisclaimer,
-                        style: Styles.note(
-                          color: AppColors.formButtonColor,
-                          italic: true,
-                          size: 14,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const Spacer(flex: 1,),
-                Padding(
-                    padding: const EdgeInsets.only(bottom: 20),
-                  child: InputButton(action: (){}, title: Strings.update, leftIcon: Assets.checkboxIcon,),
-                )
-              ],
-            ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 20),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 20),
+          child: InputButton(
+            action: () {},
+            title: Strings.update,
+            leftIcon: Assets.checkboxIcon,
           ),
         ),
       ],

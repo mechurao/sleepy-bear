@@ -2,21 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:one_context/one_context.dart';
 import 'package:sleepy_bear/Helpers/email_helper.dart';
 import 'package:sleepy_bear/Helpers/link_launcher.dart';
+import 'package:sleepy_bear/UI/Modals/bottom_sheet.dart';
 import 'package:sleepy_bear/UI/Modals/controllers/change_name_modal.dart';
 import 'package:sleepy_bear/Values/web_links.dart';
+
+import '../Values/Assets.dart';
 
 
 class SettingsControllerModel{
   SettingsControllerModel();
 
   void changeNameAction() async {
-    await showModalBottomSheet(
-      context: OneContext().context!,
-      isScrollControlled: true,
-      builder: (BuildContext context) {
-        return ChangeNameModal();
-      },
-    );
+
+    await ModalSheet.show(ChangeNameModal(),attachment: Positioned(
+        top: -174,
+        child: Assets.bearWave
+    ),);
+
   }
 
   void logoutAction(){}

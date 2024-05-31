@@ -1,27 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:sleepy_bear/Values/AppColors.dart';
 
-class AppTextformField extends StatefulWidget {
+class AppTextField extends StatefulWidget {
   final String label;
-  final FormFieldValidator<String>? validator;
-  final FormFieldSetter<String>? onSaved;
   final bool? obscure;
   final TextInputType? inputType;
+  final Function(String)? onChanged;
 
-  const AppTextformField({
+  const AppTextField({
     Key? key,
     required this.label,
-    this.validator,
-    this.onSaved,
     this.obscure = false,
     this.inputType = TextInputType.text,
+    this.onChanged,
   }) : super(key: key);
 
   @override
-  _AppTextformFieldState createState() => _AppTextformFieldState();
+  _AppTextFieldState createState() => _AppTextFieldState();
 }
 
-class _AppTextformFieldState extends State<AppTextformField> {
+class _AppTextFieldState extends State<AppTextField> {
   late FocusNode _focusNode;
   late TextEditingController _controller;
   double _radius = 15;
@@ -31,6 +29,10 @@ class _AppTextformFieldState extends State<AppTextformField> {
     super.initState();
     _focusNode = FocusNode();
     _controller = TextEditingController();
+
+    _controller.addListener(() {
+      widget.onChanged?.call(_controller.text);
+    });
 
     _focusNode.addListener(() {
       setState(() {});
@@ -48,14 +50,14 @@ class _AppTextformFieldState extends State<AppTextformField> {
   Widget build(BuildContext context) {
     return FractionallySizedBox(
       widthFactor: 0.9,
-      child: TextFormField(
+      child: TextField(
         controller: _controller,
         focusNode: _focusNode,
         decoration: InputDecoration(
           hintText: widget.label,
           filled: true,
-          border: InputBorder.none,
           fillColor: AppColors.inputColor.withOpacity(0.25),
+          border: InputBorder.none,
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(_radius),
             borderSide: BorderSide.none,
@@ -65,14 +67,12 @@ class _AppTextformFieldState extends State<AppTextformField> {
             borderSide: BorderSide.none,
           ),
         ),
-        validator: widget.validator,
-        onSaved: widget.onSaved,
         textInputAction: TextInputAction.done,
         enableSuggestions: false,
         autocorrect: false,
         obscureText: widget.obscure!,
         keyboardType: widget.inputType,
-        onFieldSubmitted: (value) {
+        onSubmitted: (value) {
           _focusNode.unfocus();
         },
       ),
