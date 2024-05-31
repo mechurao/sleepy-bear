@@ -40,6 +40,8 @@ dependencies:
   hexcolor: ^3.0.1
   lottie: ^3.1.2
   photo_view: ^0.15.0
+  url_launcher: ^6.2.6
+  email_launcher: ^1.1.1
 
 dev_dependencies:
   flutter_test:
@@ -70,15 +72,28 @@ flutter:
 
   assets:
     - assets/bear/bear_welcome.png
+    - assets/bear/bear_wave.png
     - assets/background/background.json
     - assets/icons/check.png
-    - assets/icons/navBar/listen_icon.png
-    - assets/icons/navBar/settings_icon.png
+    - assets/icons/navBar/sleep_icon.png
+    - assets/icons/navBar/more_icon.png
     - assets/icons/navBar/stories_icon.png
+    - assets/icons/navBar/sounds_icon.png
     - assets/icons/social/apple.png
     - assets/icons/social/facebook.png
     - assets/icons/social/google.png
     - assets/icons/social/mail.png
+    - assets/icons/settings/change_name.png
+    - assets/icons/settings/contact_me.png
+    - assets/icons/settings/delete_account.png
+    - assets/icons/settings/logout.png
+    - assets/icons/settings/privacy_policy.png
+    - assets/icons/settings/terms_of_service.png
+    - assets/icons/settings/tiktok.png
+    - assets/icons/settings/twitter.png
+    - assets/icons/settings/youtube.png
+    - assets/icons/privacy/privacy_blue.png
+    - assets/icons/privacy/privacy_white.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

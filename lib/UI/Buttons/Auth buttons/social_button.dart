@@ -6,7 +6,8 @@ abstract class SocialButton extends AppButton{
     required super.action,
     required super.title,
     required super.color,
-    required super.leftIcon
+    required super.leftIcon,
+    super.titleColor
   }):super(
     fontFamily: GoogleFonts.roboto().fontFamily
   );

@@ -10,6 +10,7 @@ class GoogleButton extends SocialButton{
   }):super(
     title: Strings.continueWithGoogle,
     color: AppColors.googleColor,
-    leftIcon: Assets.googleIcon
+    leftIcon: Assets.googleIcon,
+    titleColor: AppColors.appleColor
   );
 }

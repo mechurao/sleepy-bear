@@ -4,6 +4,7 @@ import 'package:one_context/one_context.dart';
 
 import 'package:sleepy_bear/Controllers/loading_controller.dart';
 import 'package:sleepy_bear/Controllers/login_controller.dart';
+import 'package:sleepy_bear/Controllers/main_controller.dart';
 import 'package:sleepy_bear/UI/Themes/AppTheme.dart';
 
 void main() async {
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       builder: OneContext().builder,
       navigatorKey: OneContext().key,
       theme: AppTheme.theme,
-      home:  LoginController(),
+      home:  MainController(),
     );
   }
 }

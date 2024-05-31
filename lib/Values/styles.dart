@@ -7,20 +7,44 @@ import 'package:sleepy_bear/Values/AppColors.dart';
 import 'package:sleepy_bear/Values/dimensions.dart';
 
 abstract class Styles{
+  
+  static Color _textColor(Color? color){
+    if(color != null){return color;}
+    return AppColors.defaultTextColor;
+  }
+  
   static TextStyle get header{
-    return OneContext().theme.textTheme.headlineLarge!.copyWith(
+    return GoogleFonts.titanOne(
       fontSize: Dimensions.headerFontSize,
-      color: AppColors.popUpColor,
-      fontFamily: GoogleFonts.titanOne().fontFamily,
+      color: AppColors.defaultTextColor,
       fontWeight: FontWeight.w400
     );
   }
 
-  static TextStyle title(){
-    return OneContext().theme.textTheme.titleLarge!.copyWith(
+  static TextStyle  title({Color? color}){
+    return GoogleFonts.nunito(
+      fontWeight: FontWeight.w900,
       fontSize: Dimensions.titleFontSize,
-      fontWeight: FontWeight.w900
+      color: _textColor(color)
+    );
+  }
 
+  static TextStyle content({Color? color}){
+    return GoogleFonts.nunito(
+      fontSize: Dimensions.contentFontSize,
+      fontWeight: FontWeight.w700,
+      color: _textColor(color)
+    );
+  }
+
+  static TextStyle note({Color? color, double? size, bool? italic}){
+    final fontSize = (size != null) ? size : Dimensions.noteFontSize;
+    final fontStyle = (italic != null && italic) ? FontStyle.italic : FontStyle.normal;
+    return GoogleFonts.nunito(
+      fontSize: fontSize,
+      fontStyle: fontStyle,
+      fontWeight: FontWeight.w700,
+      color: _textColor(color),
     );
 
   }

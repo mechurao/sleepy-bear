@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sleepy_bear/Models/login_controller_model.dart';
 import 'package:sleepy_bear/UI/Buttons/Auth%20buttons/apple_button.dart';
+import 'package:sleepy_bear/UI/Buttons/Auth%20buttons/fb_button.dart';
+import 'package:sleepy_bear/UI/Buttons/Auth%20buttons/google_button.dart';
 import 'package:sleepy_bear/UI/background.dart';
 import 'package:sleepy_bear/UI/wave_underline.dart';
 import 'package:sleepy_bear/Values/dimensions.dart';
@@ -19,9 +22,12 @@ class LoginController extends StatefulWidget {
 class _LoginControllerState extends State<LoginController> {
   bool _bearVisible = false;
 
+  late LoginControllerModel _model;
+
   @override
   void initState() {
     super.initState();
+    _model = LoginControllerModel();
     // Delayed start of animation
     Future.delayed(const Duration(milliseconds: 100), () {
       setState(() {
@@ -88,12 +94,23 @@ class _LoginControllerState extends State<LoginController> {
                     ],
                   ),
                   _infoContainer(),
-                  AppleButton(action: (){}),
+                  AppleButton(action: () => _model.appleAuth()),
+                  GoogleButton(action: () => _model.googleAuth()),
+                  FacebookButton(action: () => _model.fbAuth()),
+                  Text(Strings.or, style: TextStyle(color: AppColors.defaultTextColor, fontSize: 14, fontWeight: FontWeight.w700),),
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text(Strings.alreadyHaveAccount),
-                      WaveUnderline(text: Strings.logIn)
+                      const Text(Strings.alreadyHaveAccount),
+                      Padding(
+                          padding: const EdgeInsets.only(left: 10),
+                        child: WaveUnderline(
+                            text: Strings.logIn,
+                          fontWeight: FontWeight.w900,
+                          fontSize: 16,
+                          color: AppColors.signUpLinkColor,
+                        ),
+                      )
                     ],
                   )
                 ],
