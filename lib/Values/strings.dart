@@ -2,6 +2,8 @@ abstract class Strings{
 
   static const String sleepyBear = "Sleepy bear";
 
+  static const String cancel = "Cancel";
+
   // sign up
 static const String signUpNow = "Sign up now!";
 static const String signUpNote1 = "It's 100% FREE!";
@@ -15,6 +17,13 @@ static const String emailSignUp = "Sign up with email";
 
 static const String alreadyHaveAccount = "Already have an account ?";
 static const String logIn = "Log in";
+
+// sign in
+  static const String welcomeBack = "Welcome back";
+  static const String welcomeMessage = "If you already have an\naccount, please sign in\nbellow.";
+  static const String noAccount = "Don't have an account ?";
+  static const String emailSignIn = "Log in with email";
+  static const String signUp = "Sign up";
 
 static const String or = "or";
 
@@ -50,5 +59,10 @@ static const String parentsName = "Parent's first name";
 static const String sellDisclaimer = "We never share or sell this\ninformation with any 3rd parties";
 static const String shareDisclaimer = "We never share this information with\n3rd parties";
 
+// alerts
+  static const String connectAlertTitle = "No internet connection";
+  static const String connectAlertMsg = "Check your network connection and try again";
+  static const String errorOccuredTitle = "An error occured";
+  static const String errorOccuredMsg = "Please, try later";
 
 }

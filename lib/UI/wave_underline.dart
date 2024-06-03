@@ -9,12 +9,15 @@ class WaveUnderline extends StatefulWidget {
   final FontWeight fontWeight;
   final double fontSize;
   final Color color;
+  final Function() callback;
 
-  WaveUnderline({
+  const WaveUnderline({
+    super.key,
     required this.text,
     required this.fontWeight,
     required this.fontSize,
     required this.color,
+    required this.callback,
     this.minStrokeHeight = 1.1,
     this.maxStrokeHeight = 2.4,
   });
@@ -44,11 +47,10 @@ class _WaveUnderlineState extends State<WaveUnderline>
 
   @override
   Widget build(BuildContext context) {
-    var textStyle = TextStyle(
+    var textStyle = GoogleFonts.nunito(
       fontSize: widget.fontSize,
       fontWeight: widget.fontWeight,
       color: widget.color,
-      fontFamily: GoogleFonts.nunito().fontFamily,
     );
 
     final textSpan = TextSpan(
@@ -66,26 +68,29 @@ class _WaveUnderlineState extends State<WaveUnderline>
     final width = textPainter.width;
     final height = textPainter.height;
 
-    return Baseline(
-      baseline: height,
-      baselineType: TextBaseline.alphabetic,
-      child: AnimatedBuilder(
-        animation: _controller,
-        builder: (context, child) {
-          return CustomPaint(
-            size: Size(width, height + 10), // Adjust height to fit the underline
-            painter: IrregularWavyUnderlinePainter(
-              width * _controller.value,
-              widget.minStrokeHeight,
-              widget.maxStrokeHeight,
-              widget.color,
-            ),
-            child: Text.rich(
-              textSpan,
-              textAlign: TextAlign.center,
-            ),
-          );
-        },
+    return GestureDetector(
+      onTap: widget.callback,
+      child: Baseline(
+        baseline: height,
+        baselineType: TextBaseline.alphabetic,
+        child: AnimatedBuilder(
+          animation: _controller,
+          builder: (context, child) {
+            return CustomPaint(
+              size: Size(width, height + 10), // Adjust height to fit the underline
+              painter: IrregularWavyUnderlinePainter(
+                width * _controller.value,
+                widget.minStrokeHeight,
+                widget.maxStrokeHeight,
+                widget.color,
+              ),
+              child: Text.rich(
+                textSpan,
+                textAlign: TextAlign.center,
+              ),
+            );
+          },
+        ),
       ),
     );
   }

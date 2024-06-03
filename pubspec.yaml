@@ -44,6 +44,8 @@ dependencies:
   email_launcher: ^1.1.1
   firebase_core: ^2.32.0
   firebase_auth: ^4.20.0
+  connectivity_plus: ^6.0.3
+  flutter_platform_alert: ^0.5.1
 
 dev_dependencies:
   flutter_test:

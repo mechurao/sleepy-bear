@@ -29,10 +29,14 @@ abstract class Styles{
     );
   }
 
-  static TextStyle content({Color? color}){
+  static TextStyle content({Color? color, FontWeight? weight, double? size}){
+
+    final fontWeight = (weight != null) ? weight : FontWeight.w700;
+    final fontSize = (size != null) ? size : Dimensions.contentFontSize;
+
     return GoogleFonts.nunito(
-      fontSize: Dimensions.contentFontSize,
-      fontWeight: FontWeight.w700,
+      fontSize: fontSize,
+      fontWeight: fontWeight,
       color: _textColor(color)
     );
   }
