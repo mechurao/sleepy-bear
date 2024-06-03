@@ -14,7 +14,7 @@ class SettingsControllerModel{
 
   void changeNameAction() async {
 
-    await ModalSheet.show(ChangeNameModal(),attachment: Positioned(
+    await ModalSheet.show(const ChangeNameModal(),attachment: Positioned(
         top: -174,
         child: Assets.bearWave
     ),);

@@ -115,7 +115,33 @@ class _AuthControllerState extends State<AuthController> {
                     MailButton(title: _model.emailAuthTitle, action: () => _model.emailAuth()),
                     Padding(
                         padding: const EdgeInsets.only(top: 20),
-                      child:  Row(
+                     child: RichText(
+                       text: TextSpan(
+                         children: [
+                           TextSpan(
+                             text: _model.optionTitle,
+                            style: Styles.content(weight: FontWeight.w900)
+
+                           ),
+                           WidgetSpan(
+                               child: Padding(
+                                 padding: const EdgeInsets.only(left: 10),
+                                 child: WaveUnderline(
+                                   text: _model.switchModeTitle,
+                                   fontWeight: FontWeight.w900,
+                                   fontSize: 16,
+                                   callback: (){
+                                     setState(() {
+                                       _model.switchMode();
+                                     });
+                                   },
+                                 ),
+                               ),
+                               )
+                         ]
+                       ),
+                     ),
+                     /* child:  Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(_model.optionTitle, style: Styles.content(weight: FontWeight.w900),),
@@ -125,7 +151,6 @@ class _AuthControllerState extends State<AuthController> {
                               text: _model.switchModeTitle,
                               fontWeight: FontWeight.w900,
                               fontSize: 16,
-                              color: AppColors.signUpLinkColor,
                               callback: (){
                                 setState(() {
                                   _model.switchMode();
@@ -134,7 +159,7 @@ class _AuthControllerState extends State<AuthController> {
                             ),
                           )
                         ],
-                      ),
+                      ),*/
                     )
                   ],
                 ),

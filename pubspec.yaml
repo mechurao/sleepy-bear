@@ -75,6 +75,7 @@ flutter:
   #   - images/a_dot_ham.jpeg
 
   assets:
+    - assets/icons/enter.png
     - assets/bear/bear_welcome.png
     - assets/bear/bear_wave.png
     - assets/background/background.json
@@ -99,6 +100,8 @@ flutter:
     - assets/icons/settings/youtube.png
     - assets/icons/privacy/privacy_blue.png
     - assets/icons/privacy/privacy_white.png
+    - assets/icons/navigation/arrow_left.png
+    - assets/icons/navigation/close.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

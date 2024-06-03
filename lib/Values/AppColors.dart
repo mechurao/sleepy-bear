@@ -8,8 +8,8 @@ abstract class AppColors{
 
   static Color defaultTextColor = HexColor("#F8EEE2");
 
-  static Color formButtonColor = HexColor("#333E56");
-  static Color inputColor = HexColor("#536182");
+  static Color formColor = HexColor("#333E56");
+  static  Color inputColor = HexColor("#536182");
 
   static Color settingsButtonColor = HexColor("#1B3158");
 

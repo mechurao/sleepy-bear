@@ -17,6 +17,7 @@ static const String emailSignUp = "Sign up with email";
 
 static const String alreadyHaveAccount = "Already have an account ?";
 static const String logIn = "Log in";
+static const String signUpText = "Please fill out the form below to\ncreate your free account!";
 
 // sign in
   static const String welcomeBack = "Welcome back";
@@ -24,10 +25,21 @@ static const String logIn = "Log in";
   static const String noAccount = "Don't have an account ?";
   static const String emailSignIn = "Log in with email";
   static const String signUp = "Sign up";
+  static const String signInText = "Please fill out the form below to log\nin to your account";
 
 static const String or = "or";
-
 static const String update = "UPDATE";
+
+static const String emailAddress = "E-mail address";
+static const String password = "Password";
+
+// passwor reset
+static const String forgotPassword = "Forgot password ?";
+static const String getNewOne = "Get new one";
+static const String lostPassword = "Lost Password";
+static const String resetPassword = "Reset password";
+static const String passwordResetMessage = "Please fill out your email address\nand we will send you a new\npassword to log in.";
+
 
 // navigation bar
 static const String sleep = "Sleep";

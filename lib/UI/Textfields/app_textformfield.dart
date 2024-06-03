@@ -8,12 +8,12 @@ class AppTextField extends StatefulWidget {
   final Function(String)? onChanged;
 
   const AppTextField({
-    Key? key,
+    super.key,
     required this.label,
     this.obscure = false,
     this.inputType = TextInputType.text,
     this.onChanged,
-  }) : super(key: key);
+  });
 
   @override
   _AppTextFieldState createState() => _AppTextFieldState();
@@ -22,7 +22,7 @@ class AppTextField extends StatefulWidget {
 class _AppTextFieldState extends State<AppTextField> {
   late FocusNode _focusNode;
   late TextEditingController _controller;
-  double _radius = 15;
+  final double _radius = 15;
 
   @override
   void initState() {
@@ -49,32 +49,35 @@ class _AppTextFieldState extends State<AppTextField> {
   @override
   Widget build(BuildContext context) {
     return FractionallySizedBox(
-      widthFactor: 0.9,
-      child: TextField(
-        controller: _controller,
-        focusNode: _focusNode,
-        decoration: InputDecoration(
-          hintText: widget.label,
-          filled: true,
-          fillColor: AppColors.inputColor.withOpacity(0.25),
-          border: InputBorder.none,
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(_radius),
-            borderSide: BorderSide.none,
+      widthFactor: 0.8,
+      child: Container(
+        height: 50, // Nastavení pevné výšky
+        child: TextField(
+          controller: _controller,
+          focusNode: _focusNode,
+          decoration: InputDecoration(
+            hintText: widget.label,
+            filled: true,
+            fillColor: AppColors.inputColor.withOpacity(0.25),
+            border: InputBorder.none,
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(_radius),
+              borderSide: BorderSide.none,
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(_radius),
+              borderSide: BorderSide.none,
+            ),
           ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(_radius),
-            borderSide: BorderSide.none,
-          ),
+          textInputAction: TextInputAction.done,
+          enableSuggestions: false,
+          autocorrect: false,
+          obscureText: widget.obscure!,
+          keyboardType: widget.inputType,
+          onSubmitted: (value) {
+            _focusNode.unfocus();
+          },
         ),
-        textInputAction: TextInputAction.done,
-        enableSuggestions: false,
-        autocorrect: false,
-        obscureText: widget.obscure!,
-        keyboardType: widget.inputType,
-        onSubmitted: (value) {
-          _focusNode.unfocus();
-        },
       ),
     );
   }

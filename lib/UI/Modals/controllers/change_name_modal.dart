@@ -9,6 +9,8 @@ import '../../../Values/strings.dart';
 import '../../../Values/styles.dart';
 
 class ChangeNameModal extends StatefulWidget {
+  const ChangeNameModal({super.key});
+
   @override
   State<StatefulWidget> createState() => _ChangeNameModalState();
 }
@@ -42,11 +44,11 @@ class _ChangeNameModalState extends State<ChangeNameModal> {
       children: [
         Text(
           Strings.changeNames,
-          style: Styles.title(color: AppColors.formButtonColor),
+          style: Styles.title(color: AppColors.formColor),
         ),
         Text(
           Strings.changeNamesMessage,
-          style: Styles.content(color: AppColors.formButtonColor),
+          style: Styles.content(color: AppColors.formColor),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 10, bottom: 9),
@@ -72,7 +74,7 @@ class _ChangeNameModalState extends State<ChangeNameModal> {
               TextSpan(
                 text: Strings.shareDisclaimer,
                 style: Styles.note(
-                  color: AppColors.formButtonColor,
+                  color: AppColors.formColor,
                   italic: true,
                   size: 14,
                 ),
@@ -83,7 +85,7 @@ class _ChangeNameModalState extends State<ChangeNameModal> {
         const SizedBox(height: 20),
         Padding(
           padding: const EdgeInsets.only(bottom: 20),
-          child: InputButton(
+          child: FormButton(
             action: () {},
             title: Strings.update,
             leftIcon: Assets.checkboxIcon,

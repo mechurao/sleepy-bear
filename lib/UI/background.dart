@@ -129,7 +129,7 @@ class _BackgroundState extends State<Background> with SingleTickerProviderStateM
               child: Lottie.asset(
                 'assets/background/background.json',
                 fit: BoxFit.cover,
-                frameRate: const FrameRate(60),
+                frameRate: const FrameRate(30),
               ),
             ),
             InteractiveViewer(

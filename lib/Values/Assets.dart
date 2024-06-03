@@ -9,13 +9,20 @@ abstract class Assets{
   static const String _socialIconsPath = "${_iconsPath}social/";
   static const String _settingsIconsPath = "${_iconsPath}settings/";
   static const String _privacyIconsPath = "${_iconsPath}privacy/";
+  static const String _navigationPath = "${_iconsPath}navigation/";
 
   static Widget bearWelcome = Image.asset("${_bearPath}bear_welcome.png");
   static Widget bearWave = Image.asset("${_bearPath}bear_wave.png");
 
+  static Widget enterIcon = Image.asset(("${_iconsPath}enter.png"));
+
 
   static Widget checkIcon = Image.asset("${_iconsPath}check.png");
   static Widget checkboxIcon = Image.asset("${_iconsPath}checkbox.png");
+
+  // navigation
+  static ImageIcon closeIcon = const ImageIcon(AssetImage("${_navigationPath}close.png"));
+  static ImageIcon arrowLeftIcon = const ImageIcon(AssetImage("${_navigationPath}arrow_left.png"));
 
   // bottom navigation bar
   static ImageIcon listenIcon = const ImageIcon(AssetImage("${_navBarIconsPath}sleep_icon.png"));

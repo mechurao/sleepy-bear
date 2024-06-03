@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sleepy_bear/Values/AppColors.dart';
 
 class WaveUnderline extends StatefulWidget {
   final String text;
@@ -11,16 +12,16 @@ class WaveUnderline extends StatefulWidget {
   final Color color;
   final Function() callback;
 
-  const WaveUnderline({
+  WaveUnderline({
     super.key,
     required this.text,
-    required this.fontWeight,
+    this.fontWeight = FontWeight.w700,
     required this.fontSize,
-    required this.color,
+    Color? color,
     required this.callback,
     this.minStrokeHeight = 1.1,
     this.maxStrokeHeight = 2.4,
-  });
+  }) : this.color = color ?? AppColors.signUpLinkColor;
 
   @override
   _WaveUnderlineState createState() => _WaveUnderlineState();
@@ -34,7 +35,7 @@ class _WaveUnderlineState extends State<WaveUnderline>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(seconds: 2),
+      duration: const Duration(milliseconds: 500),
       vsync: this,
     )..forward();
   }

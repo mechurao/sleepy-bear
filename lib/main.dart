@@ -1,8 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:one_context/one_context.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:sleepy_bear/Controllers/login_controller.dart';
+import 'package:sleepy_bear/Controllers/auth_controller.dart';
+import 'package:sleepy_bear/Helpers/auth_wrapper.dart';
 import 'firebase_options.dart';
 
 import 'package:sleepy_bear/Controllers/main_controller.dart';
@@ -35,7 +37,7 @@ class MyApp extends StatelessWidget {
       builder: OneContext().builder,
       navigatorKey: OneContext().key,
       theme: AppTheme.theme,
-      home:  AuthController(),
+      home:  const AuthWrapper(),
     );
   }
 }

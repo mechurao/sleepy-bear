@@ -1,3 +1,6 @@
+import 'package:sleepy_bear/UI/Modals/bottom_sheet.dart';
+import 'package:sleepy_bear/UI/Modals/controllers/email_auth_modal.dart';
+import 'package:sleepy_bear/Values/screen_dimensions.dart';
 import 'package:sleepy_bear/Values/strings.dart';
 
 import '../Enums/auth_mode.dart';
@@ -21,15 +24,12 @@ class AuthControllerModel{
   }
 
   void emailAuth() async{
+    await ModalSheet.show(
+        EmailAuthModal(authMode: _authMode,),
+        handler: false,
+      height: ScreenDimensions.getScreenHeight()*0.5
+    );
 
-
-  }
-
-  void _emailLogin(){
-
-  }
-
-  void _emailSignUp(){
 
   }
 
