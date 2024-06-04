@@ -1,6 +1,7 @@
 import 'package:one_context/one_context.dart';
 import 'package:sleepy_bear/Controllers/auth_controller.dart';
 import 'package:sleepy_bear/Controllers/main_controller.dart';
+import 'package:sleepy_bear/Controllers/names_controller.dart';
 import 'package:sleepy_bear/UI/Routes/MainRoute.dart';
 
 abstract class NavigationHelper{
@@ -13,6 +14,6 @@ abstract class NavigationHelper{
   }
 
   static void openNameSetup(){
-    //TODO
+    OneContext().pushReplacement(MainRoute(builder: (context) => NamesController()));
   }
 }

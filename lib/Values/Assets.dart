@@ -13,6 +13,7 @@ abstract class Assets{
 
   static Widget bearWelcome = Image.asset("${_bearPath}bear_welcome.png");
   static Widget bearWave = Image.asset("${_bearPath}bear_wave.png");
+  static Widget bearBubble = Image.asset("${_bearPath}bear_bubble.png");
 
   static Widget enterIcon = Image.asset(("${_iconsPath}enter.png"));
 

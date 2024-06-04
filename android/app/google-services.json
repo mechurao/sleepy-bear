@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "991543908887",
+    "project_id": "sleepybear-app",
+    "storage_bucket": "sleepybear-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991543908887:android:05d280998b847923fada52",
+        "android_client_info": {
+          "package_name": "com.mechurao.sleepybear"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "991543908887-3ttej42ujauohjahnm9nku1c9tlo1m4j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTR-WZYxeOc9eRy5IDAUuevw0GybuABTM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "991543908887-3ttej42ujauohjahnm9nku1c9tlo1m4j.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "991543908887-khbafn4487odaa3egopqd7gkkbcqbucv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mechurao.sleepybear"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

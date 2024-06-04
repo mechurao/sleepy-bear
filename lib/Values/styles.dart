@@ -41,14 +41,24 @@ abstract class Styles{
     );
   }
 
-  static TextStyle note({Color? color, double? size, bool? italic}){
+  static TextStyle note({
+    Color? color,
+    double? size,
+    bool? italic,
+    FontWeight? weight,
+    bool? underline
+  }){
     final fontSize = (size != null) ? size : Dimensions.noteFontSize;
     final fontStyle = (italic != null && italic) ? FontStyle.italic : FontStyle.normal;
+    final fontWeight = (weight != null) ? weight : FontWeight.w700;
+    final decoration = (underline != null && underline) ? TextDecoration.underline : TextDecoration.none;
+
     return GoogleFonts.nunito(
       fontSize: fontSize,
       fontStyle: fontStyle,
-      fontWeight: FontWeight.w700,
+      fontWeight: fontWeight,
       color: _textColor(color),
+      decoration: decoration
     );
 
   }

@@ -8,9 +8,12 @@ class Header extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-   return Padding(
+   return Align(
+     alignment: Alignment.center,
+     child: Padding(
        padding: EdgeInsets.only(top: _topPadding),
-     child: AppTitle(),
+       child: AppTitle(),
+     ),
    );
   }
   

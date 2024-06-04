@@ -82,6 +82,7 @@ flutter:
     - assets/icons/enter.png
     - assets/bear/bear_welcome.png
     - assets/bear/bear_wave.png
+    - assets/bear/bear_bubble.png
     - assets/background/background.json
     - assets/icons/check.png
     - assets/icons/checkbox.png

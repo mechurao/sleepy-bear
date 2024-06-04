@@ -6,6 +6,7 @@ class AppTextField extends StatefulWidget {
   final bool? obscure;
   final TextInputType? inputType;
   final Function(String)? onChanged;
+  final Color? fillColor;
 
   const AppTextField({
     super.key,
@@ -13,6 +14,7 @@ class AppTextField extends StatefulWidget {
     this.obscure = false,
     this.inputType = TextInputType.text,
     this.onChanged,
+    this.fillColor,
   });
 
   @override
@@ -48,17 +50,20 @@ class _AppTextFieldState extends State<AppTextField> {
 
   @override
   Widget build(BuildContext context) {
+    // Default fillColor if not provided
+    final fillColor = widget.fillColor ?? AppColors.inputColor.withOpacity(0.25);
+
     return FractionallySizedBox(
       widthFactor: 0.8,
       child: Container(
-        height: 50, // Nastavení pevné výšky
+        height: 50,
         child: TextField(
           controller: _controller,
           focusNode: _focusNode,
           decoration: InputDecoration(
             hintText: widget.label,
             filled: true,
-            fillColor: AppColors.inputColor.withOpacity(0.25),
+            fillColor: fillColor,
             border: InputBorder.none,
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(_radius),

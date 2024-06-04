@@ -60,9 +60,9 @@ class _MainControllerState extends State<MainController> {
           body: IndexedStack(
             index: _selectedIndex,
             children: [
-              Center(child: Text("Sleep")),
-              Center(child: Text("Stories")),
-              Center(child: Text("Sounds")),
+              const Center(child: Text("Sleep")),
+              const Center(child: Text("Stories")),
+              const Center(child: Text("Sounds")),
               SettingsController(),
             ],
           ),

@@ -28,11 +28,18 @@ static const String signUpText = "Please fill out the form below to\ncreate your
   static const String signUp = "Sign up";
   static const String signInText = "Please fill out the form below to log\nin to your account";
 
+static const String termsOfUse = "Terms of Use ";
+static const String continueTerms1 = "By continuing, you agree to Sleepy’s ";
+static const String continueTerms2 = "and\nacknowledge you've read our ";
+
 static const String or = "or";
 static const String update = "UPDATE";
 
 static const String emailAddress = "E-mail address";
 static const String password = "Password";
+
+// names set up
+  static const String welcomeHere = "Welcome here!";
 
 // password reset
 static const String forgotPassword = "Forgot password ?";

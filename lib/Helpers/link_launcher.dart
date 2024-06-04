@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -38,6 +39,11 @@ abstract class LinkLauncher {
   }
 
   static Future<void> openLink(String url) async{
-    await launchUrlString(url);
+    try{
+      await launchUrlString(url);
+    }catch(e){
+      debugPrint(e.toString());
+    }
+
   }
 }
