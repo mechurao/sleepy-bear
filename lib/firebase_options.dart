@@ -63,6 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '991543908887',
     projectId: 'sleepybear-app',
     storageBucket: 'sleepybear-app.appspot.com',
+    iosClientId: '991543908887-khbafn4487odaa3egopqd7gkkbcqbucv.apps.googleusercontent.com',
     iosBundleId: 'com.mechurao.sleepybear',
   );
 

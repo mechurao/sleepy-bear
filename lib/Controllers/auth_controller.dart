@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sleepy_bear/Enums/auth_mode.dart';
-import 'package:sleepy_bear/Models/login_controller_model.dart';
+import 'package:sleepy_bear/Models/auth_controller_model.dart';
 import 'package:sleepy_bear/UI/Buttons/Auth%20buttons/apple_button.dart';
 import 'package:sleepy_bear/UI/Buttons/Auth%20buttons/fb_button.dart';
 import 'package:sleepy_bear/UI/Buttons/Auth%20buttons/google_button.dart';

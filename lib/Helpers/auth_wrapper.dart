@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:sleepy_bear/Controllers/main_controller.dart';
 
 import '../Controllers/auth_controller.dart';
 
@@ -12,19 +13,9 @@ class AuthWrapper extends StatefulWidget {
 
 class _AuthWrapperState extends State<AuthWrapper> {
   @override
-  void initState() {
-    super.initState();
-
-    final user = FirebaseAuth.instance.currentUser;
-    if (user == null) {
-      debugPrint("User not signed up");
-    } else {
-      debugPrint("User signed in");
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser;
+    if(user != null){return MainController();}
     return const AuthController();
   }
 }

@@ -82,7 +82,7 @@ class _ChangeNameModalState extends State<ChangeNameModal> {
             ],
           ),
         ),
-        const SizedBox(height: 20),
+        const SizedBox(height: 15),
         Padding(
           padding: const EdgeInsets.only(bottom: 20),
           child: FormButton(

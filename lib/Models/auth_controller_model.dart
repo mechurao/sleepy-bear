@@ -1,3 +1,8 @@
+import 'package:flutter/material.dart';
+import 'package:sleepy_bear/Helpers/alert_service.dart';
+import 'package:sleepy_bear/Helpers/auth_service.dart';
+import 'package:sleepy_bear/Helpers/connection_service.dart';
+import 'package:sleepy_bear/Helpers/navigation_helper.dart';
 import 'package:sleepy_bear/UI/Modals/bottom_sheet.dart';
 import 'package:sleepy_bear/UI/Modals/controllers/email_auth_modal.dart';
 import 'package:sleepy_bear/Values/screen_dimensions.dart';
@@ -11,15 +16,34 @@ class AuthControllerModel{
 
   AuthControllerModel();
 
-  void appleAuth(){
-
+  void appleAuth() async{
+    final con = await ConnectionService.isConnectionActive();
+    if(!con){
+      await AlertService.showConnectionAlert();
+      return;
+    }
+    final res = await AuthService.appleAuth();
+    if(res != null){
+      await AlertService.showAlert(res);
+      return;
+    }
+    NavigationHelper.openApp();
   }
 
-  void googleAuth(){
-
+  void googleAuth() async{
+    final con = await ConnectionService.isConnectionActive();
+    if(!con){
+      await AlertService.showConnectionAlert();
+      return;
+    }
+    final res = await AuthService.googleAuth();
+    if(res != null){
+      debugPrint(res);
+    }
+    NavigationHelper.openApp();
   }
 
-  void fbAuth(){
+  void fbAuth() async{
 
   }
 
@@ -29,8 +53,6 @@ class AuthControllerModel{
         handler: false,
       height: ScreenDimensions.getScreenHeight()*0.5
     );
-
-
   }
 
 

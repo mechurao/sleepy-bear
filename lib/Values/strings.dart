@@ -3,6 +3,7 @@ abstract class Strings{
   static const String sleepyBear = "Sleepy bear";
 
   static const String cancel = "Cancel";
+  static const String delete = "Delete";
 
   // sign up
 static const String signUpNow = "Sign up now!";
@@ -33,7 +34,7 @@ static const String update = "UPDATE";
 static const String emailAddress = "E-mail address";
 static const String password = "Password";
 
-// passwor reset
+// password reset
 static const String forgotPassword = "Forgot password ?";
 static const String getNewOne = "Get new one";
 static const String lostPassword = "Lost Password";
@@ -76,5 +77,20 @@ static const String shareDisclaimer = "We never share this information with\n3rd
   static const String connectAlertMsg = "Check your network connection and try again";
   static const String errorOccuredTitle = "An error occured";
   static const String errorOccuredMsg = "Please, try later";
+
+  static const String inputsEmptyTitle = "All textfields has to be filled";
+  static const String inputsEmptyMsg = "Please enter valid information and try again";
+
+  static const String invalidEmailTitle = "E-mail address is invalid";
+  static const String invalidEmailMsg = "Please enter valid e-mail address and try again";
+
+  static const String shortPasswordTitle = "Your password is too short";
+  static const String shortPasswordMsg = "Password has to be at least %d characters long";
+
+  static const String passwordResetSentTitle = "Password reset request had been sent";
+  static const String passwordResetSentMsg = "Please check your inbox";
+
+  static const String deleteUserTitle = "Are you sure ?";
+  static const String deleteUserMsg = "All your data will be forever lost";
 
 }
