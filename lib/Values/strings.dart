@@ -101,4 +101,9 @@ static const String shareDisclaimer = "We never share this information with\n3rd
   static const String deleteUserTitle = "Are you sure ?";
   static const String deleteUserMsg = "All your data will be forever lost";
 
+  static const String changeNameTitle = "This form can't be empty";
+  static const String changeNameMsg = "At least one nave have to be filled";
+
+  static const String changeNamesSuccess = "Names had been successfully updated";
+
 }

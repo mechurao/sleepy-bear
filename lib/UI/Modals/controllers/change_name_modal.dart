@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sleepy_bear/Helpers/alert_service.dart';
+import 'package:sleepy_bear/Helpers/api_service.dart';
+import 'package:sleepy_bear/Helpers/connection_service.dart';
+import 'package:sleepy_bear/Helpers/hud_helper.dart';
 import 'package:sleepy_bear/UI/Buttons/form_button.dart';
 import 'package:sleepy_bear/UI/Textfields/app_textformfield.dart';
 import '../../../Values/AppColors.dart';
@@ -36,6 +40,32 @@ class _ChangeNameModalState extends State<ChangeNameModal> {
       _parentName = val;
     });
   }
+
+  void _submitAction() async{
+    final conn = await ConnectionService.isConnectionActive();
+    if(!conn){
+      await AlertService.showConnectionAlert();
+      return;
+    }
+    if(_childName.isEmpty && _parentName.isEmpty){
+      await AlertService.showAlert(Strings.changeNameTitle, message: Strings.changeNamesMessage);
+      return;
+    }
+
+    String? updateChild = (_childName.isNotEmpty) ? _childName : null;
+    String? updateParent = (_parentName.isNotEmpty) ? _parentName : null;
+
+    HudHelper.showHud();
+    final res = await ApiService.updateNames(parent: updateParent, child: updateChild);
+    HudHelper.dismissHud();
+    if(!res){
+      await AlertService.showErrorAlert();
+      return;
+    }
+    await AlertService.showAlert(Strings.changeNamesSuccess);
+    return;
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +116,7 @@ class _ChangeNameModalState extends State<ChangeNameModal> {
         Padding(
           padding: const EdgeInsets.only(bottom: 20),
           child: FormButton(
-            action: () {},
+            action: () => _submitAction(),
             title: Strings.update,
             leftIcon: Assets.checkboxIcon,
           ),
