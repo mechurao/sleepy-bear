@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:one_context/one_context.dart';
 import 'package:sleepy_bear/Helpers/alert_service.dart';
+import 'package:sleepy_bear/Helpers/api_service.dart';
 import 'package:sleepy_bear/Helpers/auth_service.dart';
 import 'package:sleepy_bear/Helpers/connection_service.dart';
 import 'package:sleepy_bear/Helpers/email_helper.dart';
@@ -51,10 +52,18 @@ class SettingsControllerModel{
     }
     HudHelper.showHud();
     final res = await AuthService.deleteUser();
-    HudHelper.dismissHud();
 
     if(res != null){
+      HudHelper.dismissHud();
       await AlertService.showAlert(res);
+      return;
+    }
+
+    final data = await ApiService.deleteUserData();
+    HudHelper.dismissHud();
+
+    if(!data){
+      await AlertService.showErrorAlert();
       return;
     }
     NavigationHelper.openAuth();

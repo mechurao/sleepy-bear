@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:one_context/one_context.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:sleepy_bear/Controllers/auth_controller.dart';
-import 'package:sleepy_bear/Helpers/auth_wrapper.dart';
+import 'package:sleepy_bear/Helpers/launcher.dart';
 import 'firebase_options.dart';
 
 import 'package:sleepy_bear/Controllers/main_controller.dart';
@@ -17,11 +17,19 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+
+  // get start screen
+  final start = await Launcher.start();
+
+  runApp( MyApp(startScreen: start,));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final Widget startScreen;
+  const MyApp({
+    super.key,
+    required this.startScreen
+  });
 
 
   @override
@@ -37,7 +45,7 @@ class MyApp extends StatelessWidget {
       builder: OneContext().builder,
       navigatorKey: OneContext().key,
       theme: AppTheme.theme,
-      home:  const AuthWrapper(),
+      home:  startScreen,
     );
   }
 }
