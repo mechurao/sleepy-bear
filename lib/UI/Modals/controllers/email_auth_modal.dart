@@ -6,7 +6,7 @@ import 'package:sleepy_bear/Helpers/auth_service.dart';
 import 'package:sleepy_bear/Helpers/connection_service.dart';
 import 'package:sleepy_bear/Helpers/hud_helper.dart';
 import 'package:sleepy_bear/Helpers/navigation_helper.dart';
-import 'package:sleepy_bear/UI/Buttons/input_button.dart';
+import 'package:sleepy_bear/UI/Buttons/form_button.dart';
 import 'package:sleepy_bear/UI/Textfields/app_textformfield.dart';
 import 'package:sleepy_bear/UI/wave_underline.dart';
 import 'package:sleepy_bear/Values/AppColors.dart';

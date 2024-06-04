@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sleepy_bear/Values/config.dart';
 import 'package:sleepy_bear/Values/dimensions.dart';
 
 abstract class AppButton extends StatelessWidget {
@@ -33,13 +34,13 @@ abstract class AppButton extends StatelessWidget {
     );
 
     return FractionallySizedBox(
-      widthFactor: 0.8,
+      widthFactor: Config.contentWidthFactor,
       child: ElevatedButton(
         onPressed: action,
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all<Color>(color),
           minimumSize: MaterialStateProperty.all<Size>(
-            Size(double.infinity, height ?? 50.0),
+            Size(double.infinity, height ?? Config.inputHeight),
           ),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(

@@ -50,6 +50,7 @@ dependencies:
   flutter_svprogresshud: ^1.0.1
   sprintf: ^7.0.0
   google_sign_in: ^6.2.1
+  keyboard_dismisser: ^3.0.0
 
 dev_dependencies:
   flutter_test:

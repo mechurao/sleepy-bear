@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:sleepy_bear/UI/Buttons/input_button.dart';
+import 'package:sleepy_bear/UI/Buttons/form_button.dart';
 import 'package:sleepy_bear/UI/Textfields/app_textformfield.dart';
 import '../../../Values/AppColors.dart';
 import '../../../Values/Assets.dart';

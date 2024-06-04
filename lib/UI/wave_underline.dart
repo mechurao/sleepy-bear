@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sleepy_bear/Values/AppColors.dart';
+import 'package:sleepy_bear/Values/config.dart';
 
 class WaveUnderline extends StatefulWidget {
   final String text;
@@ -35,7 +36,7 @@ class _WaveUnderlineState extends State<WaveUnderline>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: Config.waveDuration),
       vsync: this,
     )..forward();
   }

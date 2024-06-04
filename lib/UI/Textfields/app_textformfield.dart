@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sleepy_bear/Values/AppColors.dart';
+import 'package:sleepy_bear/Values/config.dart';
 
 class AppTextField extends StatefulWidget {
   final String label;
@@ -54,9 +55,9 @@ class _AppTextFieldState extends State<AppTextField> {
     final fillColor = widget.fillColor ?? AppColors.inputColor.withOpacity(0.25);
 
     return FractionallySizedBox(
-      widthFactor: 0.8,
-      child: Container(
-        height: 50,
+      widthFactor: Config.contentWidthFactor,
+      child: SizedBox(
+        height: Config.inputHeight,
         child: TextField(
           controller: _controller,
           focusNode: _focusNode,

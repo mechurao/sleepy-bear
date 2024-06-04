@@ -40,6 +40,7 @@ static const String password = "Password";
 
 // names set up
   static const String welcomeHere = "Welcome here!";
+  static const String saveNames = "SAVE NAMES";
 
 // password reset
 static const String forgotPassword = "Forgot password ?";

@@ -9,6 +9,7 @@ import 'package:sleepy_bear/UI/Buttons/Auth%20buttons/google_button.dart';
 import 'package:sleepy_bear/UI/Buttons/Auth%20buttons/mail_button.dart';
 import 'package:sleepy_bear/UI/background.dart';
 import 'package:sleepy_bear/UI/wave_underline.dart';
+import 'package:sleepy_bear/Values/config.dart';
 import 'package:sleepy_bear/Values/styles.dart';
 import 'package:sleepy_bear/Values/web_links.dart';
 
@@ -91,7 +92,7 @@ class _AuthControllerState extends State<AuthController> {
 
     Widget _infoContainer() {
       return FractionallySizedBox(
-        widthFactor: 0.8,
+        widthFactor: Config.contentWidthFactor,
         child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -157,7 +158,7 @@ class _AuthControllerState extends State<AuthController> {
             ),
           ),
           AnimatedPositioned(
-            duration: const Duration(milliseconds: 900),
+            duration: const Duration(milliseconds: Config.animationDuration),
             right: _bearVisible ? 0 : -MediaQuery.of(context).size.width,
             top: MediaQuery.of(context).size.height * 0.05,
             curve: Curves.easeInOut,
