@@ -89,6 +89,8 @@ flutter:
     - assets/background/background.json
     - assets/icons/check.png
     - assets/icons/checkbox.png
+    - assets/icons/star.png
+    - assets/icons/start.png
     - assets/icons/navBar/sleep_icon.png
     - assets/icons/navBar/more_icon.png
     - assets/icons/navBar/stories_icon.png

@@ -8,4 +8,5 @@ abstract class Config{
 
   static const double contentWidthFactor = 0.8;
   static const double inputHeight = 50;
+  static const double mainInputHeight = 70;
 }

@@ -49,6 +49,10 @@ static const String lostPassword = "Lost Password";
 static const String resetPassword = "Reset password";
 static const String passwordResetMessage = "Please fill out your email address\nand we will send you a new\npassword to log in.";
 
+// sleep screen
+  static const String hello = "Hello, ";
+  static const String welcomeText = "Click the button for a perfect way to get\nready to relax and sleep. Or you can\nsimply choose a story from our library.";
+  static const String startNow = "START NOW";
 
 // navigation bar
 static const String sleep = "Sleep";

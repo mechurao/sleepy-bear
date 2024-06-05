@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sleepy_bear/Values/config.dart';
 import 'package:sleepy_bear/Values/dimensions.dart';
 
@@ -11,6 +12,9 @@ abstract class AppButton extends StatelessWidget {
   final Widget? rightIcon;
   final String? fontFamily;
   final double? height;
+  final FontWeight? fontWeight;
+  final double? fontSize;
+  final TextStyle? style;
 
   const AppButton({
     super.key,
@@ -21,16 +25,23 @@ abstract class AppButton extends StatelessWidget {
     this.rightIcon,
     this.titleColor,
     this.fontFamily,
-    this.height, 
+    this.height,
+    this.fontWeight,
+    this.fontSize,
+    this.style
   });
+
+
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle textStyle = TextStyle(
-      fontSize: Dimensions.contentFontSize,
+
+
+    final TextStyle textStyle = style??TextStyle(
+      fontSize: fontSize??Dimensions.contentFontSize,
       color: titleColor ?? Colors.white,
       fontFamily: fontFamily,
-      fontWeight: FontWeight.w700
+      fontWeight:fontWeight??FontWeight.w700
     );
 
     return FractionallySizedBox(

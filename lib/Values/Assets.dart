@@ -17,6 +17,9 @@ abstract class Assets{
 
   static Widget enterIcon = Image.asset(("${_iconsPath}enter.png"));
 
+  static Widget starIcon = Image.asset("${_iconsPath}star.png");
+
+  static Widget startIcon = Image.asset("${_iconsPath}start.png");
 
   static Widget checkIcon = Image.asset("${_iconsPath}check.png");
   static Widget checkboxIcon = Image.asset("${_iconsPath}checkbox.png");

@@ -1,9 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:one_context/one_context.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:sleepy_bear/Controllers/auth_controller.dart';
+import 'package:sleepy_bear/Controllers/names_controller.dart';
 import 'package:sleepy_bear/Helpers/launcher.dart';
 import 'firebase_options.dart';
 
@@ -16,6 +18,12 @@ void main() async {
   // firebase init
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  // setup offline database
+  FirebaseFirestore.instance.settings = const Settings(
+    persistenceEnabled: true,
+    cacheSizeBytes: Settings.CACHE_SIZE_UNLIMITED
   );
 
   // get start screen
@@ -45,7 +53,7 @@ class MyApp extends StatelessWidget {
       builder: OneContext().builder,
       navigatorKey: OneContext().key,
       theme: AppTheme.theme,
-      home:  startScreen,
+      home:  MainController(),
     );
   }
 }

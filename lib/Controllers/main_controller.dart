@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sleepy_bear/Controllers/Menu%20controllers/settings_controller.dart';
+import 'package:sleepy_bear/Controllers/Menu%20controllers/sleep_controller.dart';
 import 'package:sleepy_bear/Models/main_controller_model.dart';
 import 'package:sleepy_bear/UI/background.dart';
 import 'package:sleepy_bear/Values/Assets.dart';
@@ -70,7 +71,7 @@ class _MainControllerState extends State<MainController> {
           body: IndexedStack(
             index: _selectedIndex,
             children: [
-              const Center(child: Text("Sleep")),
+              SleepController(),
               const Center(child: Text("Stories")),
               const Center(child: Text("Sounds")),
               SettingsController(),
